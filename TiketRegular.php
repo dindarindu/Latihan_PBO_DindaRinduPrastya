@@ -19,6 +19,10 @@ class TiketRegular extends Tiket {
         return "Studio Regular - Audio: " . $this->tipeAudio . ", Baris: " . $this->lokasiBaris; 
     } 
 
+    public function hitungTotalHarga() { 
+    return $this->jumlah_kursi * $this->hargaDasarTiket; 
+}
+
     // ==========================================
     // FUNGSI: QUERY SELECT WHERE
     // ==========================================

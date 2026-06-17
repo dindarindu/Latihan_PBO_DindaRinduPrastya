@@ -17,6 +17,10 @@ class TiketIMAX extends Tiket {
         return "Studio IMAX - Fitur: " . $this->efekGerakFitur . ", Kacamata 3D: " . $info3d;
     }
 
+    public function hitungTotalHarga() { 
+    return ($this->jumlah_kursi * $this->hargaDasarTiket) + 35000; 
+}
+
     // ==========================================
     // FUNGSI BARU: QUERY SELECT WHERE
     // ==========================================
@@ -24,7 +28,7 @@ class TiketIMAX extends Tiket {
      * Mengambil data tiket IMAX dari database berdasarkan fitur efek gerak tertentu.
      * Diasumsikan properti koneksi database bernama '$connection' diwarisi dari class induk (Tiket)
      */
-    public function ambilTiketIMAXBerdasarEfek($efek) {
+    public function ambilTiketIMAX() {
         // Mengamankan input dari SQL Injection
         $efekAman = $this->connection->real_escape_string($efek);
         

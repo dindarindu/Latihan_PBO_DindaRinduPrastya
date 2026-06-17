@@ -17,6 +17,10 @@ class TiketVelvet extends Tiket {
         return "Studio Velvet - Bantal & Selimut: " . $bantal . ", Layanan Butler: " . $butler;
     }
 
+    public function hitungTotalHarga() { 
+    return ($this->jumlah_kursi * $this->hargaDasarTiket) * 1.50; 
+}
+
     // ==========================================
     // FUNGSI BARU: QUERY SELECT WHERE
     // ==========================================
@@ -24,7 +28,7 @@ class TiketVelvet extends Tiket {
      * Mengambil data tiket Velvet dari database berdasarkan status layanan butler.
      * Diasumsikan properti koneksi database bernama '$connection' diwarisi dari class induk (Tiket)
      */
-    public function ambilTiketVelvetBerdasarButler($statusButler) {
+    public function ambilTiketVelvet($statusButler) {
         // Mengamankan input dari SQL Injection
         $butlerAman = $this->connection->real_escape_string($statusButler);
         
