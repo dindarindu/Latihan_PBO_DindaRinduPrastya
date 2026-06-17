@@ -45,8 +45,6 @@ abstract class Tiket {
     // Wajib diimplementasikan oleh setiap class anak
     // ==========================================
     
-    // Digunakan untuk menghitung total harga tiket setelah ditambah biaya fasilitas studio
-    abstract public function hitungTotalHarga();
 
     // Digunakan untuk menampilkan fasilitas spesifik yang didapatkan dari jenis studio
     abstract public function tampilkanInfoFasilitas();
